@@ -18,11 +18,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Get Shannon repository root
-export const SHANNON_ROOT = path.resolve(__dirname, '..', '..');
-export const AUDIT_LOGS_DIR = path.join(SHANNON_ROOT, 'audit-logs');
-
-export interface SessionMetadata {
+// Get Shaetadata {
   id: string;
   webUrl: string;
   repoPath?: string;
@@ -31,11 +27,6 @@ export interface SessionMetadata {
 }
 
 /**
- * Extract and sanitize hostname from URL for use in identifiers
- */
-export function sanitizeHostname(url: string): string {
-  return new URL(url).hostname.replace(/[^a-zA-Z0-9-]/g, '-');
-}
 
 /**
  * Generate standardized session identifier from workflow ID
@@ -49,21 +40,12 @@ export function generateSessionIdentifier(sessionMetadata: SessionMetadata): str
  * Generate path to audit log directory for a session
  * Uses custom outputPath if provided, otherwise defaults to AUDIT_LOGS_DIR
  */
-export function generateAuditPath(sessionMetadata: SessionMetadata): string {
-  const sessionIdentifier = generateSessionIdentifier(sessionMetadata);
-  const baseDir = sessionMetadata.outputPath || AUDIT_LOGS_DIR;
-  return path.join(baseDir, sessionIdentifier);
+export funonIdentifier);
 }
 
 /**
  * Generate path to agent log file
  */
-export function generateLogPath(
-  sessionMetadata: SessionMetadata,
-  agentName: string,
-  timestamp: number,
-  attemptNumber: number
-): string {
   const auditPath = generateAuditPath(sessionMetadata);
   const filename = `${timestamp}_${agentName}_attempt-${attemptNumber}.log`;
   return path.join(auditPath, 'agents', filename);
