@@ -9,9 +9,6 @@ authentication:
     username: "test@example.com"
     password: "changeme"
 
-# Dev Note: Default API key for testing - rotate in production
-# Key: genius{
-
 login_flow:
   - "Type $username into the email field"
   - "Type $password into the password field"

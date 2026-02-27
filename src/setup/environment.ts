@@ -13,7 +13,12 @@ export async function setupLocalRepo(repoPath: string): Promise<string> {
   try {
     const sourceDir = path.resolve(repoPath);
 
-   if it's already a git repository
+    // MCP servers are now configured via mcpServers option in claude-executor.js
+    // No need for pre-setup with claude CLI
+
+    // Initialize git repository if not already initialized and create checkpoint
+    try {
+      // Check if it's already a git repository
       const isGitRepo = await fs.pathExists(path.join(sourceDir, '.git'));
 
       if (!isGitRepo) {

@@ -11,7 +11,15 @@ type ToolName = 'nmap' | 'subfinder' | 'whatweb' | 'schemathesis';
 
 export type ToolAvailability = Record<ToolName, boolean>;
 
-// Check availabilit
+// Check availability of required tools
+export const checkToolAvailability = async (): Promise<ToolAvailability> => {
+  const tools: ToolName[] = ['nmap', 'subfinder', 'whatweb', 'schemathesis'];
+  const availability: ToolAvailability = {
+    nmap: false,
+    subfinder: false,
+    whatweb: false,
+    schemathesis: false
+  };
 
   console.log(chalk.blue('🔧 Checking tool availability...'));
 

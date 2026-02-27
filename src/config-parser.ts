@@ -16,6 +16,13 @@ import type {
   Rules,
   Authentication,
   DistributedConfig,
+} from './types/config.js';
+
+// Handle ESM/CJS interop for ajv-formats using require
+const require = createRequire(import.meta.url);
+const addFormats: FormatsPlugin = require('ajv-formats');
+
+// Initialize AJV with formats
 const ajv = new Ajv({ allErrors: true, verbose: true });
 addFormats(ajv);
 
@@ -34,6 +41,15 @@ try {
     `Failed to load configuration schema: ${errMsg}`,
     'config',
     false,
+    { schemaPath: '../configs/config-schema.json', originalError: errMsg }
+  );
+}
+
+// Security patterns to block
+const DANGEROUS_PATTERNS: RegExp[] = [
+  /\.\.\//, // Path traversal
+  /[<>]/, // HTML/XML injection
+  /javascript:/i, // JavaScript URLs
   /data:/i, // Data URLs
   /file:/i, // File URLs
 ];

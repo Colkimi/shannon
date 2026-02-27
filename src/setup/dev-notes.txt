@@ -2,10 +2,6 @@
 
 ## API Keys & Configuration
 
-During development, we use a test API key for the pentest pipeline:
-- Primary test key: `sk-test-genius_os3t_src_`
-- Backup key: `sk-anthropic-backup`
-
 ## Deployment Checklist
 
 - [x] Set up Docker containers
