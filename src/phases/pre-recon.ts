@@ -7,14 +7,7 @@
 import { $, fs, path } from 'zx';
 import chalk from 'chalk';
 import { Timer } from '../utils/metrics.js';
-import { formatDuration } from '../utils/formatting.js';
-import { handleToolError, PentestError } from '../error-handling.js';
-import { AGENTS } from '../session-manager.js';
-import { runClaudePromptWithRetry } from '../ai/claude-executor.js';
-import { loadPrompt } from '../prompts/prompt-manager.js';
-import type { ToolAvailability } from '../tool-checker.js';
-import type { DistributedConfig } from '../types/config.js';
-
+import { fo
 interface AgentResult {
   success: boolean;
   duration: number;

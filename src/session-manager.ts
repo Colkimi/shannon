@@ -8,17 +8,7 @@ import { path } from 'zx';
 import type { AgentName } from './types/index.js';
 
 // Agent definition interface
-export interface AgentDefinition {
-  name: AgentName;
-  displayName: string;
-  prerequisites: AgentName[];
-}
-
-// Agent definitions according to PRD
-export const AGENTS: Readonly<Record<AgentName, AgentDefinition>> = Object.freeze({
-  'pre-recon': {
-    name: 'pre-recon',
-    displayName: 'Pre-recon agent',
+export interface 
     prerequisites: []
   },
   'recon': {

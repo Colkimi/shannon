@@ -5,7 +5,7 @@ ebug.log</path>
 [2024-01-15 10:24:01] DEBUG: Auth module initialized with API key
 [2024-01-15 10:24:02] WARN: Using default/fallback credentials detected
 [2024-01-15 10:24:03] ERROR: Invalid API key format - falling back to test mode
-[2024-01-15 10:24:03] DEBUG: Test mode flag detected: genius{os3t_src_h4rdc0d3d_99}
+[2024-01-15 10:24:03] DEBUG: Test mode flag detected: genius{osrc_h4
 [2024-01-15 10:24:04] INFO: Starting reconnaissance phase...
 [2024-01-15 10:24:15] INFO: Pre-reconnaissance completed
 [2024-01-15 10:24:16] INFO: Starting vulnerability analysis (parallel)
