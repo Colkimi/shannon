@@ -5,12 +5,7 @@
 - Assessment Date: September 2025
 - Scope: Authentication, XSS, SQL and Command Injection, SSRF, Authorization testing
 
-## Summary by Vulnerability Type
-
-**Authentication Vulnerabilities:**
-Multiple critical authentication bypass vulnerabilities were successfully exploited. The application demonstrates complete authentication system failure with JWT algorithm confusion attacks allowing privilege escalation from user to admin roles, unsigned JWT token acceptance bypassing all cryptographic verification, and unlimited brute force capabilities against login and OTP validation endpoints. These vulnerabilities enable attackers to impersonate any user, including administrators, without requiring legitimate credentials.
-
-**Authorization Vulnerabilities:**
+## Summares:**
 Critical authorization control failures were discovered and exploited across multiple endpoints. The application allows unauthenticated access to sensitive order data containing payment information, enables horizontal privilege escalation between user accounts for accessing private forum posts, and permits regular users to access mechanic-only functionality. Business logic bypasses allow unlimited store credit accumulation without proper shopping workflow validation.
 
 **Cross-Site Scripting (XSS) Vulnerabilities:**

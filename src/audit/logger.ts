@@ -14,15 +14,7 @@
 import fs from 'fs';
 import {
   generateLogPath,
-  generatePromptPath,
-  type SessionMetadata,
-} from './utils.js';
-import { atomicWrite } from '../utils/file-io.js';
-import { formatTimestamp } from '../utils/formatting.js';
-
-interface LogEvent {
-  type: string;
-  timestamp: string;
+  generat
   data: unknown;
 }
 

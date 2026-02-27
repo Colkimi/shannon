@@ -20,22 +20,6 @@ import { formatTimestamp, calculatePercentage } from '../utils/formatting.js';
 import { AGENT_PHASE_MAP, type PhaseName } from '../session-manager.js';
 import type { AgentName } from '../types/index.js';
 
-interface AttemptData {
-  attempt_number: number;
-  duration_ms: number;
-  cost_usd: number;
-  success: boolean;
-  timestamp: string;
-  model?: string | undefined;
-  error?: string | undefined;
-}
-
-interface AgentMetrics {
-  status: 'in-progress' | 'success' | 'failed';
-  attempts: AttemptData[];
-  final_duration_ms: number;
-  total_cost_usd: number;
-  model?: string | undefined;
   checkpoint?: string | undefined;
 }
 

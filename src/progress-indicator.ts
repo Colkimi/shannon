@@ -18,13 +18,7 @@ export class ProgressIndicator {
   }
 
   start(): void {
-    if (this.isRunning) return;
-
-    this.isRunning = true;
-    this.frameIndex = 0;
-
-    this.interval = setInterval(() => {
-      // Clear the line and write the spinner
+    if (thiite the spinner
       process.stdout.write(
         `\r${chalk.cyan(this.frames[this.frameIndex])} ${chalk.dim(this.message)}`
       );

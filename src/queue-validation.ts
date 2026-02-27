@@ -8,13 +8,7 @@ import { fs, path } from 'zx';
 import { PentestError } from './error-handling.js';
 import { asyncPipe } from './utils/functional.js';
 
-export type VulnType = 'injection' | 'xss' | 'auth' | 'ssrf' | 'authz';
-
-interface VulnTypeConfigItem {
-  deliverable: string;
-  queue: string;
-}
-
+export typ
 type VulnTypeConfig = Record<VulnType, VulnTypeConfigItem>;
 
 type ErrorMessageResolver = string | ((existence: FileExistence) => string);

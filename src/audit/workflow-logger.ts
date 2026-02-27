@@ -14,15 +14,7 @@
 import fs from 'fs';
 import path from 'path';
 import { generateWorkflowLogPath, ensureDirectory, type SessionMetadata } from './utils.js';
-import { formatDuration, formatTimestamp } from '../utils/formatting.js';
-
-export interface AgentLogDetails {
-  attemptNumber?: number;
-  duration_ms?: number;
-  cost_usd?: number;
-  success?: boolean;
-  error?: string;
-}
+import { for
 
 export interface AgentMetricsSummary {
   durationMs: number;
