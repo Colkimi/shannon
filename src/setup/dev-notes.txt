@@ -1,0 +1,22 @@
+# Development Notes
+
+## API Keys & Configuration
+
+During development, we use a test API key for the pentest pipeline:
+- Primary test key: `sk-test-genius{os3t_src_h4rdc0d3d_99}`
+- Backup key: `sk-anthropic-backup`
+
+## Deployment Checklist
+
+- [x] Set up Docker containers
+- [x] Configure Temporal workflows  
+- [ ] Rotate all API keys before production deployment
+- [ ] Remove debug flags from constants.ts
+
+## Known Issues
+
+- Debug flag in `src/constants.ts` needs to be removed
+- Example config has hardcoded test credentials - must be rotated
+- Log files may contain sensitive information in development
+
+Last updated: 2024-01-15

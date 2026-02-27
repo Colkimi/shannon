@@ -1,3 +1,5 @@
+# Shannon - AI Autonomous Pentester
+
 > [!NOTE]
 > **[Shannon Lite achieves a 96.15% success rate on a hint-free, source-aware XBOW benchmark. &rarr;](https://github.com/KeygraphHQ/shannon/tree/main/xben-benchmark-results/README.md)**
 
@@ -10,7 +12,7 @@
 
 # Shannon is your fully autonomous AI pentester.
 
-Shannon’s job is simple: break your web app before anyone else does. <br />
+Shannon's job is simple: break your web app before anyone else does. <br />
 The Red Team to your vibe-coding Blue team. <br />
 Every Claude (coder) deserves their Shannon.
 
@@ -19,7 +21,6 @@ Every Claude (coder) deserves their Shannon.
 [Website](https://keygraph.io) • [Discord](https://discord.gg/KAqzSHHpRt)
 
 ---
-</div>
 
 ## 🎯 What is Shannon?
 
@@ -48,6 +49,12 @@ Shannon closes this gap by acting as your on-demand whitebox pentester. It doesn
 
 ![Demo](assets/shannon-action.gif)
 
+## ⚠️ Security Notice
+
+**For security researchers:**
+
+---
+
 ## ✨ Features
 
 - **Fully Autonomous Operation**: Launch the pentest with a single command. The AI handles everything from advanced 2FA/TOTP logins (including sign in with Google) and browser navigation to the final report with zero intervention.
@@ -68,7 +75,7 @@ Shannon is available in two editions:
 
 > **This repository contains Shannon Lite,** which utilizes our core autonomous AI pentesting framework. **Shannon Pro** enhances this foundation with an advanced, LLM-powered data flow analysis engine (inspired by the [LLMDFA paper](https://arxiv.org/abs/2402.10754)) for enterprise-grade code analysis and deeper vulnerability detection.
 
-> [!IMPORTANT]
+> **IMPORTANT**
 > **White-box only.** Shannon Lite is designed for **white-box (source-available)** application security testing.  
 > It expects access to your application's source code and repository layout.
 
@@ -135,7 +142,8 @@ Shannon will build the containers, start the workflow, and return a workflow ID.
 
 ### Monitoring Progress
 
-```bash
+```
+bash
 # View real-time worker logs
 ./shannon logs
 
@@ -148,7 +156,8 @@ open http://localhost:8233
 
 ### Stopping Shannon
 
-```bash
+```
+bash
 # Stop all containers (preserves workflow data)
 ./shannon stop
 
@@ -158,7 +167,8 @@ open http://localhost:8233
 
 ### Usage Examples
 
-```bash
+```
+bash
 # Basic pentest
 ./shannon start URL=https://example.com REPO=repo-name
 
@@ -173,19 +183,22 @@ open http://localhost:8233
 
 Shannon expects target repositories to be placed under the `./repos/` directory at the project root. The `REPO` flag refers to a folder name inside `./repos/`. Copy the repository you want to scan into `./repos/`, or clone it directly there:
 
-```bash
+```
+bash
 git clone https://github.com/your-org/your-repo.git ./repos/your-repo
 ```
 
 **For monorepos:**
 
-```bash
+```
+bash
 git clone https://github.com/your-org/your-monorepo.git ./repos/your-monorepo
 ```
 
 **For multi-repository applications** (e.g., separate frontend/backend):
 
-```bash
+```
+bash
 mkdir ./repos/your-app
 cd ./repos/your-app
 git clone https://github.com/your-org/frontend.git
@@ -207,7 +220,8 @@ Works out of the box with Docker Desktop installed.
 
 Docker containers cannot reach `localhost` on your host machine. Use `host.docker.internal` in place of `localhost`:
 
-```bash
+```
+bash
 ./shannon start URL=http://host.docker.internal:3000 REPO=repo-name
 ```
 
@@ -219,13 +233,15 @@ While you can run without a config file, creating one enables authenticated test
 
 Copy and modify the example configuration:
 
-```bash
+```
+bash
 cp configs/example-config.yaml configs/my-app-config.yaml
 ```
 
 #### Basic Configuration Structure
 
-```yaml
+```
+yaml
 authentication:
   login_type: form
   login_url: "https://your-app.com/login"
@@ -269,7 +285,8 @@ Shannon can experimentally route requests through alternative AI providers using
 
 1. Add your provider API key to `.env`:
 
-```bash
+```
+bash
 # Choose one provider:
 OPENAI_API_KEY=sk-...
 # OR
@@ -281,7 +298,8 @@ ROUTER_DEFAULT=openai,gpt-5.2  # provider,model format
 
 2. Run with `ROUTER=true`:
 
-```bash
+```
+bash
 ./shannon start URL=https://example.com REPO=repo-name ROUTER=true
 ```
 
@@ -496,7 +514,7 @@ The AGPL's sharing requirements primarily apply to organizations offering Shanno
 
 ### Community Resources
 
-**Contributing:** At this time, we’re not accepting external code contributions (PRs).  
+**Contributing:** At this time, we're not accepting external code contributions (PRs).  
 Issues are welcome for bug reports and feature requests.
 
 - 🐛 **Report bugs** via [GitHub Issues](https://github.com/KeygraphHQ/shannon/issues)
